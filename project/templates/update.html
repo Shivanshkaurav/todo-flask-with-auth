@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center mt-3">{% block title %} Update ToDo {% endblock %}</h1>
+    <div class="container mt-6">
+        <form method="post" action="/update/{{todo.id}}/">
+            <div class="mb-3 mt-3 fluid">
+                <label for="text" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="text" aria-describedby="emailHelp" value="{{todo.title}}">
+            </div>
+            <div class="mb-5">
+                <label for="text" class="form-label">Description</label>
+                <input type="text" name ="desc" class="form-control" id="text" value="{{todo.description}}">
+            </div>
+            <button type="submit" class="btn btn-dark">Update</button>
+        </form>
+    </div>
+{% endblock %}

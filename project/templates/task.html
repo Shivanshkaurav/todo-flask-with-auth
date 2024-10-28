@@ -1,0 +1,31 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<div class="container">
+
+    <h1 class="title">{% block title %}List of ToDo{% endblock %}</h1>
+    {% if todos|length == 0 %}
+    {% else %}
+    {% for todo in todos %}
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{todo.title}}</h5>
+                <p class="card-text">{{todo.description}}</p>
+                <a href="/update/{{todo.id}}/"
+                    class="btn btn-outline-dark mx-1">Update</a>
+                <a href="/delete/{{todo.id}}/"
+                    class="btn btn-outline-dark">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="container mt-3">
+    <div class="card-body">
+        <a href="/" class="btn btn-outline-dark ml-4">Add Todo</a>
+    </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

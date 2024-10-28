@@ -1,0 +1,18 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+  <h1 class="text-center mt-3">{% block title %} Add ToDo {% endblock %}</h1>
+  <div class="container mt">
+    <form method="post" action="/add-task">
+      <div class="mb-3 mt-3 fluid">
+        <label for="text" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="text" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-5">
+        <label for="text" class="form-label">Description</label>
+        <input type="text" name ="desc" class="form-control" id="text">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+{% endblock %}
